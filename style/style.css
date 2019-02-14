@@ -1,0 +1,30 @@
+body {
+  background-image: url("../images/astronomie.jpg");
+  background-size: cover;
+
+  color: beige;
+}
+
+header {
+  width: calc(100% - 40px);
+  margin: 20px;
+}
+
+header h1 {
+  border-bottom: 1px solid beige;
+}
+
+#menu {
+  margin: 0 10%;
+  padding: 5px 0;
+
+  border-top: 1px solid beige;
+  border-bottom: 1px solid beige;
+}
+
+#menu li {
+  text-transform: uppercase;
+  list-style-type: none;
+  margin-bottom: 0;
+  text-align: center;
+}
