@@ -1,7 +1,13 @@
 const x_reference = xtag.create('x-reference', class extends XTagElement {
-  name () {return "test"}
+  constructor(obj) {
+    super();
+    for(var k in obj) this[k]=obj[k];
+  }
   '::template(true)' (){
-    return `<h2>I am ${this.name()}</h2>
-            <span>I was created by a mad scientist</span>`;
+    return `
+    <article class="fur colums">
+      <h2>${this.titre}</h2>
+      <h3>${this.description}</h3>
+    </article>`;
   }
 });

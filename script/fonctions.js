@@ -14,3 +14,17 @@ function filtrer (donnees, filtre) {
 
   }
 }
+
+function get_filtre () {
+  return {};
+}
+
+function afficher_references (references) {
+  _.each(filtrer(references, get_filtre()), function (ref) {
+    var div = document.createElement("div");
+    div.appendChild(new x_reference(ref));
+    div.classList.add("four");
+    div.classList.add("columns");
+    document.querySelector("#contenu").appendChild(div);
+  })
+}
