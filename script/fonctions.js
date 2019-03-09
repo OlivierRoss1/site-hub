@@ -1,4 +1,4 @@
-// Prends deux objets en paramètres. Premier : données. 2e : liste de
+// Prends deux objets en paramètres. Premier : données. 2e : liste de filtre (JSON)
 function filtrer (donnees, filtre) {
   if (_.isEmpty(filtre)) {
     return donnees;

@@ -1012,8 +1012,7 @@
           "children": [{
             "name": "cluster",
             "children": [{
-              "name": "AgglomerativeCluster",
-              "value": 1
+              "name": "AgglomerativeCluster"
             }]
           }]
         },{
@@ -1021,8 +1020,7 @@
         "children": [{
           "name": "cluster",
           "children": [{
-            "name": "AgglomerativeCluster",
-            "value": 2
+            "name": "AgglomerativeCluster"
           }]
         }]
       }
@@ -1046,8 +1044,7 @@
 
   partition = data => {
     const root = d3.hierarchy(data)
-      .sum(d => d.value)
-      .sort((a, b) => b.value - a.value);
+      .count();
     return d3.partition()
       .size([2 * Math.PI, root.height + 1])
       (root);
