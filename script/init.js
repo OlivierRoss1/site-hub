@@ -1,3 +1,3 @@
 (function () {
-  afficher_references(references);
+  //afficher_references(references);
 })();

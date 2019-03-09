@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
-
+<!-- https://developers.google.com/sheets/api/v3/data NICEEEEEEEE
+https://stackoverflow.com/questions/23760768/how-to-retrieve-data-from-google-spreadsheet-to-javascript-or-json
+https://observablehq.com/@d3/zoomable-sunburst
+-->
 <head>
   <meta charset="utf-8">
   <title>HUB 0/1</title>
@@ -26,6 +29,9 @@
       </ul>
     </nav>
   </header>
+  <section id="sunburst" class="row">
+    <svg></svg>
+  </section>
   <section id="contenu" class="row">
 
   </section>
@@ -34,12 +40,14 @@
   </footer>
   <script src="lib/underscore-min.js"></script>
   <script src="lib/x-tag-polyfilled.min.js"></script>
+  <script src="lib/d3.min.js"></script>
 
   <script src="donnees/references.js"></script>
 
-  <script src="script/templates.js"></script>
-  <script src="script/fonctions.js"></script>
 
+  <script src="script/fonctions.js"></script>
+  <script src="script/templates.js"></script>
   <script src="script/init.js"></script>
+  <script src="script/sunburst.js"></script>
 </body>
 </hmtl>
