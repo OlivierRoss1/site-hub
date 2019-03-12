@@ -2,7 +2,7 @@
   // Inspiration : https://observablehq.com/@d3/zoomable-sunburst
 
   // Parametres
-  var width = 600,
+  var width =  Math.max(document.documentElement.clientHeight, window.innerHeight || 0), // Pour faire un carre, on prend la hauteur max
     format = d3.format(",d"),
     radius = width / 6;
 
@@ -44,12 +44,12 @@
 
   const svg = d3.select("svg")
     .style("width", "100%")
-    .style("height", "800px")
-    .style("font", "10px sans-serif");
+    .style("height", width + "px")
+    .style("font", "12px sans-serif");
 
   // Centrer le design
   const g = svg.append("g")
-    .attr("transform", `translate(${width / 2},${width / 2})`);
+    .attr("transform", `translate(${width},${width / 2})`);
 
   const path = g.append("g")
     .selectAll("path")
@@ -88,6 +88,15 @@
     .attr("fill", "none")
     .attr("pointer-events", "all")
     .on("click", clicked);
+
+    const parent_label = parent.append("g")
+      .attr("pointer-events", "none")
+      .attr("text-anchor", "middle")
+      .style("user-select", "none")
+      .selectAll("text")
+      .data(parent)
+      .join("text")
+      .text("d => d.data.name");
 
   function clicked(p) {
     parent.datum(p.parent || root);
